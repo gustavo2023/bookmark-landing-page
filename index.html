@@ -47,7 +47,7 @@
 
       <button
         id="mobile-menu-toggle"
-        class="bg-transparent border-none cursor-pointer md:hidden"
+        class="cursor-pointer md:hidden"
         aria-label="Open navigation menu"
         aria-controls="main-navigation"
         aria-expanded="false"
@@ -60,6 +60,54 @@
           />
         </svg>
       </button>
+
+      <nav
+        id="main-nav"
+        class="flex flex-col items-center justify-between fixed -top-0 z-50 h-full bg-blue-950 opacity-0 transition-opacity duration-300 ease-in-out md:flex-row md:relative md:bg-white md:opacity-100"
+        aria-label="Main navigation"
+      >
+        <button
+          id="close-mobile-menu"
+          class="cursor-pointer md:hidden"
+          aria-label="Close mobile menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15">
+            <path
+              fill="#FFF"
+              fill-rule="evenodd"
+              d="M8 5.379L13.303.075l2.122 2.122L10.12 7.5l5.304 5.303-2.122 2.122L8 9.62l-5.303 5.304-2.122-2.122L5.88 7.5.575 2.197 2.697.075 8 5.38z"
+            />
+          </svg>
+        </button>
+
+        <ul
+          class="flex flex-col gap-16 uppercase tracking-wider text-white md:text-black md:flex-row"
+        >
+          <li>
+            <a href="#" class="transition-colors md:hover:text-red-400"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="#" class="transition-colors md:hover:text-red-400"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a href="#" class="transition-colors md:hover:text-red-400"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border-2 border-white text-white py-4 px-12 rounded-md transition-colors ease-in-out md:border-red-400 md:shadow-sm/30 md:shadow-black md:bg-red-400 md:hover:bg-white md:hover:text-red-400"
+              aria-label="Login"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
   </body>
 </html>
