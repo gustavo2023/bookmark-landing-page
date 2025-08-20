@@ -224,8 +224,20 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
   .top-6 {
     top: calc(var(--spacing) * 6);
+  }
+  .top-16 {
+    top: calc(var(--spacing) * 16);
+  }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
+  .top-24 {
+    top: calc(var(--spacing) * 24);
   }
   .top-28 {
     top: calc(var(--spacing) * 28);
@@ -293,6 +305,9 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
   .h-36 {
     height: calc(var(--spacing) * 36);
   }
@@ -301,6 +316,15 @@
   }
   .h-44 {
     height: calc(var(--spacing) * 44);
+  }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-52 {
+    height: calc(var(--spacing) * 52);
+  }
+  .h-56 {
+    height: calc(var(--spacing) * 56);
   }
   .h-auto {
     height: auto;
@@ -648,6 +672,11 @@
       top: calc(var(--spacing) * 44);
     }
   }
+  .md\:top-50 {
+    @media (width >= 48rem) {
+      top: calc(var(--spacing) * 50);
+    }
+  }
   .md\:right-\[-6rem\] {
     @media (width >= 48rem) {
       right: -6rem;
@@ -727,6 +756,11 @@
   .md\:justify-between {
     @media (width >= 48rem) {
       justify-content: space-between;
+    }
+  }
+  .md\:gap-5 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 5);
     }
   }
   .md\:gap-6 {
