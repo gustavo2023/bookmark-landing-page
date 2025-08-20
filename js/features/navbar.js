@@ -1,41 +1,15 @@
-// DOM elements
+// Navbar module: all open/close behavior and listeners
+import { showWhiteLogo, showColoredLogo, isDesktop } from "../utils/helpers.js";
+import { syncNavA11y } from "../utils/a11y.js";
+
 const body = document.body;
+const mainNav = document.getElementById("main-nav");
 const openMenuButton = document.getElementById("mobile-menu-toggle");
 const closeMenuButton = document.getElementById("close-mobile-menu");
-const mainNav = document.getElementById("main-nav");
 const logoColored = document.getElementById("logo-colored");
 const logoWhite = document.getElementById("logo-white");
 
-// Logo functions
-const showWhiteLogo = () => {
-  if (window.innerWidth < 768) {
-    logoColored?.classList.add("hidden");
-    logoWhite?.classList.remove("hidden");
-  }
-};
-
-const showColoredLogo = () => {
-  logoWhite?.classList.add("hidden");
-  logoColored?.classList.remove("hidden");
-};
-
-// Helpers
-const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
-
-const syncNavA11y = () => {
-  const desktop = isDesktop();
-  const isOpen = openMenuButton.getAttribute("aria-expanded") === "true";
-  if (desktop || isOpen) {
-    mainNav.removeAttribute("inert");
-    mainNav.setAttribute("aria-hidden", "false");
-  } else {
-    mainNav.setAttribute("inert", "");
-    mainNav.setAttribute("aria-hidden", "true");
-  }
-};
-
-// Navigation functions
-const openNavbar = () => {
+function openNavbar() {
   mainNav.classList.remove(
     "opacity-0",
     "pointer-events-none",
@@ -47,18 +21,18 @@ const openNavbar = () => {
   openMenuButton.setAttribute("aria-expanded", "true");
   openMenuButton.classList.add("invisible");
 
-  showWhiteLogo();
-  closeMenuButton.focus();
+  showWhiteLogo(logoColored, logoWhite);
+  closeMenuButton?.focus();
 
-  syncNavA11y();
-};
+  syncNavA11y({ mainNav, openMenuButton });
+}
 
-const closeNavbar = () => {
+function closeNavbar() {
   openMenuButton.classList.remove("invisible");
   openMenuButton.setAttribute("aria-expanded", "false");
   openMenuButton.focus();
 
-  syncNavA11y();
+  syncNavA11y({ mainNav, openMenuButton });
 
   mainNav.classList.remove(
     "opacity-90",
@@ -68,13 +42,13 @@ const closeNavbar = () => {
   mainNav.classList.add("opacity-0", "pointer-events-none", "-translate-y-2");
   body.classList.remove("overflow-hidden");
 
-  showColoredLogo();
-};
+  showColoredLogo(logoColored, logoWhite);
+}
 
-const handleResize = () => {
+function handleResize() {
   if (isDesktop()) {
     // Ensure desktop is always usable and mobile overlay isn't "stuck open"
-    showColoredLogo();
+    showColoredLogo(logoColored, logoWhite);
     body.classList.remove("overflow-hidden");
     mainNav.classList.remove(
       "opacity-90",
@@ -85,15 +59,23 @@ const handleResize = () => {
     openMenuButton.classList.remove("invisible");
     openMenuButton.setAttribute("aria-expanded", "false");
   }
-  syncNavA11y();
-};
+  syncNavA11y({ mainNav, openMenuButton });
+}
 
-// Event listeners
-mainNav.addEventListener("click", (e) => {
-  if (e.target.tagName === "A" && window.innerWidth < 768) closeNavbar();
-});
+export function initNavbar() {
+  // Guard
+  const required = { body, mainNav, openMenuButton, closeMenuButton };
+  for (const [name, el] of Object.entries(required)) {
+    if (!el) throw new Error(`[navbar] Missing required element: ${name}`);
+  }
 
-openMenuButton.addEventListener("click", openNavbar);
-closeMenuButton.addEventListener("click", closeNavbar);
-window.addEventListener("resize", handleResize);
-syncNavA11y();
+  mainNav.addEventListener("click", (e) => {
+    if (e.target.tagName === "A" && window.innerWidth < 768) closeNavbar();
+  });
+
+  openMenuButton.addEventListener("click", openNavbar);
+  closeMenuButton.addEventListener("click", closeNavbar);
+  window.addEventListener("resize", handleResize);
+
+  syncNavA11y({ mainNav, openMenuButton });
+}
