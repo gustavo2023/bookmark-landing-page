@@ -22,9 +22,9 @@
       rel="stylesheet"
     />
 
-  <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </head>
-  <body class="flex flex-col min-h-screen font-[Rubik]">
+  <body class="flex flex-col min-h-screen font-[Rubik] overflow-x-hidden">
     <header class="flex items-center justify-between bg-white p-8 md:p-16">
       <a
         href="#"
@@ -201,8 +201,51 @@
       </nav>
     </header>
 
-    <main>
-      <section id="hero"></section>
+    <main class="flex flex-col w-full mt-12">
+      <section
+        id="hero"
+        class="flex flex-col justify-center items-center w-full gap-5 md:flex-row-reverse md:justify-between"
+        aria-labelledby="hero-heading"
+      >
+        <div class="relative flex w-full md:w-1/2">
+          <img
+            src="./images/illustration-hero.svg"
+            alt="Hero illustration of device screen"
+          />
+          <div
+            class="absolute -z-10 right-[-3rem] top-28 w-[22rem] h-44 md:right-[-6rem] md:top-44 md:w-[38rem] md:h-72 bg-blue-buttons rounded-l-full"
+          ></div>
+        </div>
+
+        <div
+          class="flex flex-col justify-center items-center h-full gap-6 md:w-1/2 p-8 md:items-start md:gap-6 md:pl-[4.5rem]"
+        >
+          <h1
+            id="hero-heading"
+            class="text-blue-950 text-3xl text-center font-medium md:text-5xl md:text-left"
+          >
+            A Simple Bookmark Manager
+          </h1>
+          <p class="text-gray-400 text-center text-wrap md:text-left md:pr-16">
+            A clean and simple interface to organize your favorite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+
+          <div class="flex justify-center items-center gap-3 font-medium mt-2">
+            <a
+              href="#"
+              class="flex justify-center items-center w-40 py-3 bg-blue-buttons border-2 border-blue-buttons text-white rounded-md hover:bg-white hover:text-blue-buttons transition-colors ease-in-out md:w-44"
+              >Get it on Chrome</a
+            >
+            <a
+              href="#"
+              class="flex justify-center items-center w-40 py-3 bg-gray-100 border-2 border-gray-100 text-gray-700 rounded-md hover:bg-white hover:border-gray-700 transition-colors ease-in-out md:w-44"
+              >Get it on Firefox</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
