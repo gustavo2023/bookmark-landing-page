@@ -315,8 +315,20 @@
   .table {
     display: table;
   }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
   .h-44 {
     height: calc(var(--spacing) * 44);
+  }
+  .h-54 {
+    height: calc(var(--spacing) * 54);
+  }
+  .h-56 {
+    height: calc(var(--spacing) * 56);
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
   }
   .h-auto {
     height: auto;
@@ -820,6 +832,16 @@
   .md\:h-56 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 56);
+    }
+  }
+  .md\:h-64 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 64);
+    }
+  }
+  .md\:h-66 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 66);
     }
   }
   .md\:h-72 {
