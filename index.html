@@ -275,7 +275,7 @@
             role="tab"
             aria-selected="true"
             aria-controls="panel-bookmarking"
-            class="relative w-full md:w-auto border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-25px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100"
+            class="relative w-full md:w-auto border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 focus-visible:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-25px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100 transition-all duration-300 ease-in-out"
           >
             Simple Bookmarking
           </button>
@@ -285,7 +285,7 @@
             role="tab"
             aria-selected="false"
             aria-controls="panel-searching"
-            class="relative w-full md:w-auto border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-25px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100"
+            class="relative w-full md:w-auto border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 focus-visible:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-25px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100 transition-all duration-300 ease-in-out"
           >
             Speedy Searching
           </button>
@@ -295,7 +295,7 @@
             role="tab"
             aria-selected="false"
             aria-controls="panel-sharing"
-            class="relative w-full md:w-auto border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-25px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100"
+            class="relative w-full md:w-auto border-y py-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 focus-visible:text-red-500 md:px-4 md:py-2 md:border-none aria-selected:text-blue-950 after:block after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:top-[55px] after:md:top-[64px] after:h-[5px] after:w-1/2 after:md:w-full after:bg-red-400 after:opacity-0 aria-selected:after:opacity-100 transition-all duration-300 ease-in-out"
           >
             Easy Sharing
           </button>
@@ -305,9 +305,8 @@
         <div
           id="panel-bookmarking"
           role="tabpanel"
-          tabindex="0"
           aria-labelledby="tab-bookmarking"
-          class="relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row"
+          class="feature-panel relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row opacity-100 translate-y-0 transition-transform duration-300"
         >
           <div class="flex w-full overflow-hidden md:w-1/2">
             <img
@@ -345,10 +344,9 @@
         <div
           id="panel-searching"
           role="tabpanel"
-          tabindex="0"
           aria-labelledby="tab-searching"
           hidden
-          class="relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row"
+          class="feature-panel relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row opacity-100 translate-y-0 transition-transform duration-300"
         >
           <div class="flex w-full overflow-hidden md:w-1/2">
             <img
@@ -385,10 +383,9 @@
         <div
           id="panel-sharing"
           role="tabpanel"
-          tabindex="0"
           aria-labelledby="tab-sharing"
           hidden
-          class="relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row"
+          class="feature-panel relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row opacity-100 translate-y-0 transition-transform duration-300"
         >
           <div class="flex w-full overflow-hidden md:w-1/2">
             <img
