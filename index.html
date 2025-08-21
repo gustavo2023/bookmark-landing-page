@@ -250,18 +250,74 @@
 
       <section
         id="features"
-        class="flex flex-col justify-center items-center w-full p-8"
+        class="flex flex-col justify-center items-center w-full"
       >
         <h2
-          class="text-2xl text-center text-blue-950 font-medium mb-4 md:text-3xl"
+          class="text-2xl text-center text-blue-950 font-medium mb-4 md:text-3xl px-8"
         >
           Features
         </h2>
-        <p class="text-gray-400 text-center text-wrap md:text-left md:pr-16">
+        <p class="text-gray-400 text-center text-wrap px-8 md:w-[30rem]">
           Our aim is to make it quick and easy for you to access your favorite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
         </p>
+
+        <div
+          class="w-full flex flex-col justify-center items-center gap-6 mt-8 p-8 md:w-2/3 md:flex-row md:gap-6 md:border-b-2 md:border-gray-200 md:pb-6"
+        >
+          <button
+            class="w-full border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:border-none"
+          >
+            Simple Bookmarking
+          </button>
+          <button
+            class="w-full border-t pt-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:border-none"
+          >
+            Speedy Searching
+          </button>
+          <button
+            class="w-full border-y py-4 text-gray-500 text-lg border-gray-200 cursor-pointer hover:text-red-500 md:border-none md:pb-0"
+          >
+            Easy Sharing
+          </button>
+        </div>
+
+        <div
+          class="relative w-full flex flex-col justify-center items-center gap-6 mt-8 md:flex-row"
+        >
+          <div class="flex w-full overflow-hidden md:w-1/2">
+            <img
+              src="./images/illustration-features-tab-1.svg"
+              alt="Hero illustration of device screen"
+              class="object-cover w-full h-auto p-8 md:w-[80%] md:ml-auto"
+            />
+            <div
+              class="absolute -z-10 left-0 top-20 w-72 h-44 md:top-44 md:w-[38rem] md:h-56 bg-blue-buttons rounded-r-full"
+            ></div>
+          </div>
+
+          <div
+            class="flex flex-col justify-center items-center h-full gap-6 md:w-1/2 p-8 md:items-start md:gap-6 md:pl-[4.5rem]"
+          >
+            <h2 class="text-2xl text-blue-950 font-medium mb-2 md:text-3xl">
+              Bookmark in one click
+            </h2>
+            <p
+              class="text-gray-400 text-center text-wrap md:text-left md:pr-40"
+            >
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface give you complete control over how you manage your
+              favorite sites.
+            </p>
+            <a
+              href="#"
+              class="hidden md:block border-2 border-blue-buttons text-white bg-blue-buttons rounded-md py-2 px-5 hover:bg-white hover:text-blue-buttons transition-colors ease-in-out"
+            >
+              More info
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   </body>
