@@ -1,5 +1,4 @@
 import {
-  prefersReducedMotion,
   findCurrentTab,
   getPanelForTab,
   applyTabSelection,
@@ -8,6 +7,7 @@ import {
   animateIn,
   focusTab,
 } from "../utils/feature-tabs-helpers.js";
+import { prefersReducedMotion } from "../utils/motion.js";
 
 export const initFeaturesTabs = () => {
   const tablist = document.getElementById("features-tabs");

@@ -1,5 +1,9 @@
 // Navbar module: all open/close behavior and listeners
-import { showWhiteLogo, showColoredLogo, isDesktop } from "../utils/helpers.js";
+import {
+  showWhiteLogo,
+  showColoredLogo,
+  isDesktop,
+} from "../utils/navbar-helpers.js";
 import { syncNavA11y } from "../utils/a11y.js";
 
 const body = document.body;

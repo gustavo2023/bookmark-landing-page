@@ -1,6 +1,4 @@
-export const prefersReducedMotion = () => {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-};
+import { prefersReducedMotion } from "./motion.js";
 
 export const findCurrentTab = (tabs) => {
   return tabs.find((t) => t.getAttribute("aria-selected") === "true") || null;

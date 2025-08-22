@@ -1,4 +1,4 @@
-import { isDesktop } from "./helpers.js";
+import { isDesktop } from "./navbar-helpers.js";
 
 export const syncNavA11y = ({ mainNav, openMenuButton }) => {
   const desktop = isDesktop();
