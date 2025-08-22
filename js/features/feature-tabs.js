@@ -9,7 +9,7 @@ import {
   focusTab,
 } from "../utils/feature-tabs-helpers.js";
 
-export function initFeaturesTabs() {
+export const initFeaturesTabs = () => {
   const tablist = document.getElementById("features-tabs");
   if (!tablist) return;
 
@@ -18,7 +18,7 @@ export function initFeaturesTabs() {
 
   const reduceMotion = prefersReducedMotion();
 
-  function activate(nextTab) {
+  const activate = (nextTab) => {
     if (!nextTab || nextTab.getAttribute("aria-selected") === "true") return;
 
     const currentTab = findCurrentTab(tabs);
@@ -39,7 +39,7 @@ export function initFeaturesTabs() {
     animateIn(newPanel);
 
     focusTab(nextTab);
-  }
+  };
 
   // Click delegation for all tabs
   tablist.addEventListener("click", (e) => {
@@ -59,4 +59,4 @@ export function initFeaturesTabs() {
     e.preventDefault();
     activate(tabs[nextIndex]);
   });
-}
+};

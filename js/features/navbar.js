@@ -9,7 +9,7 @@ const closeMenuButton = document.getElementById("close-mobile-menu");
 const logoColored = document.getElementById("logo-colored");
 const logoWhite = document.getElementById("logo-white");
 
-function openNavbar() {
+const openNavbar = () => {
   mainNav.classList.remove(
     "opacity-0",
     "pointer-events-none",
@@ -25,9 +25,9 @@ function openNavbar() {
   closeMenuButton?.focus();
 
   syncNavA11y({ mainNav, openMenuButton });
-}
+};
 
-function closeNavbar() {
+const closeNavbar = () => {
   openMenuButton.classList.remove("invisible");
   openMenuButton.setAttribute("aria-expanded", "false");
   openMenuButton.focus();
@@ -43,9 +43,9 @@ function closeNavbar() {
   body.classList.remove("overflow-hidden");
 
   showColoredLogo(logoColored, logoWhite);
-}
+};
 
-function handleResize() {
+const handleResize = () => {
   if (isDesktop()) {
     // Ensure desktop is always usable and mobile overlay isn't "stuck open"
     showColoredLogo(logoColored, logoWhite);
@@ -60,9 +60,9 @@ function handleResize() {
     openMenuButton.setAttribute("aria-expanded", "false");
   }
   syncNavA11y({ mainNav, openMenuButton });
-}
+};
 
-export function initNavbar() {
+export const initNavbar = () => {
   // Guard
   const required = { body, mainNav, openMenuButton, closeMenuButton };
   for (const [name, el] of Object.entries(required)) {
@@ -78,4 +78,4 @@ export function initNavbar() {
   window.addEventListener("resize", handleResize);
 
   syncNavA11y({ mainNav, openMenuButton });
-}
+};

@@ -1,6 +1,6 @@
 import { isDesktop } from "./helpers.js";
 
-export function syncNavA11y({ mainNav, openMenuButton }) {
+export const syncNavA11y = ({ mainNav, openMenuButton }) => {
   const desktop = isDesktop();
   const isOpen = openMenuButton.getAttribute("aria-expanded") === "true";
   if (desktop || isOpen) {
@@ -10,4 +10,4 @@ export function syncNavA11y({ mainNav, openMenuButton }) {
     mainNav?.setAttribute("inert", "");
     mainNav?.setAttribute("aria-hidden", "true");
   }
-}
+};
