@@ -55,7 +55,7 @@ export const initFeaturesTabs = () => {
     );
     if (currentIndex === -1) return;
     const nextIndex = computeNextIndex(currentIndex, e.key, tabs.length);
-    if (nextIndex == null) return;
+    if (nextIndex === null) return;
     e.preventDefault();
     activate(tabs[nextIndex]);
   });
