@@ -33,7 +33,6 @@ const expand = (trigger, panel) => {
 // Collapse a panel
 const collapse = (trigger, panel) => {
   trigger.setAttribute("aria-expanded", "false");
-  trigger.classList.remove('text-red-500');
   const icon = trigger.querySelector('.faq-icon');
   icon?.classList.remove('rotate-180','text-red-500');
 
